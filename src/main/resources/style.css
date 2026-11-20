@@ -1,0 +1,35 @@
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f6f7f9;
+}
+
+.heading {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f3a5f;
+}
+
+.button {
+    -fx-background-color: #1f3a5f;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-padding: 6 14;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2b5288;
+}
+
+.error {
+    -fx-text-fill: #b3261e;
+}
+
+.ok {
+    -fx-text-fill: #1b6e3a;
+}
+
+.titled-pane > .title {
+    -fx-font-weight: bold;
+}
