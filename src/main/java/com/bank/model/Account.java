@@ -1,3 +1,5 @@
+package com.bank.model;
+
 public abstract class Account {
     protected String accountNumber;
     protected double balance;
@@ -22,6 +24,9 @@ public abstract class Account {
 
     // Abstract method to be implemented by subclasses
     public abstract boolean withdraw(double amount);
+
+    // Abstract: each subclass returns "SAVINGS", "INVESTMENT" or "CHEQUE" (used by the GUI and database)
+    public abstract String getAccountType();
 
     public String getAccountNumber() { return accountNumber; }
     public double getBalance() { return balance; }

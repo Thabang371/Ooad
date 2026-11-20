@@ -1,3 +1,5 @@
+package com.bank.model;
+
 public class ChequeAccount extends Account {
     private String employerName;
     private String employerAddress;
@@ -6,6 +8,11 @@ public class ChequeAccount extends Account {
         super(accountNumber, initialBalance, branch, customer);
         this.employerName = employerName;
         this.employerAddress = employerAddress;
+    }
+
+    @Override
+    public String getAccountType() {
+        return "CHEQUE";
     }
 
     @Override

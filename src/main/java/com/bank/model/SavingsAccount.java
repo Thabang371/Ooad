@@ -1,3 +1,5 @@
+package com.bank.model;
+
 public class SavingsAccount extends Account implements InterestBearing {
     private static final double INTEREST_RATE = 0.0005; // 0.05%
 
@@ -10,6 +12,11 @@ public class SavingsAccount extends Account implements InterestBearing {
         // Savings accounts do not allow withdrawals
         System.out.println("Withdrawals are not permitted from a Savings Account.");
         return false; 
+    }
+
+    @Override
+    public String getAccountType() {
+        return "SAVINGS";
     }
 
     @Override
