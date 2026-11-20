@@ -1,0 +1,15 @@
+{
+  // GitHub Codespaces: Java 21 + Maven + a lightweight desktop so the JavaFX window can be shown.
+  // To see the GUI: open the PORTS tab, open port 6080 in the browser, click Connect (password: vscode),
+  // then run `mvn javafx:run` in the terminal.
+  "name": "Banking System (Java 21 + JavaFX + H2)",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": { "version": "none", "installMaven": "true" },
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": { "6080": { "label": "Desktop (noVNC)" } },
+  "customizations": { "vscode": { "extensions": ["vscjava.vscode-java-pack"] } },
+  "postCreateCommand": "mvn -q -DskipTests compile"
+}
