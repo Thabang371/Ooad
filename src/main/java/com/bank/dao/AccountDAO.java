@@ -47,7 +47,12 @@ public class AccountDAO {
 
     /** Generates the next account number for a type, e.g. SAV-1006. */
     public String nextAccountNumber(String accountType) {
-        String prefix = accountType.substring(0, 3);
+        String prefix = switch (accountType) {
+            case "SAVINGS" -> "SAV";
+            case "INVESTMENT" -> "INV";
+            case "CHEQUE" -> "CHQ";
+            default -> throw new IllegalArgumentException("Unknown account type: " + accountType);
+        };
         String sql = "SELECT MAX(CAST(SUBSTRING(account_number, 5) AS INT)) FROM accounts WHERE account_type = ?";
         try (Connection c = Database.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
